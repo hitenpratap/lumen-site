@@ -75,6 +75,35 @@ h1, h2, h3 { font-family: "Bricolage Grotesque", Inter, sans-serif; color: var(-
 .stop .eyebrow { margin-bottom: 8px; }
 .ai-shot { margin-top: 40px; }
 
+/* How it works diagram */
+.diagram-scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
+.diagram { display: block; width: 100%; min-width: 860px; height: auto; color: var(--ink); font-family: Inter, system-ui, sans-serif; }
+.diagram-cap { margin: 12px 0 0; font-size: 15px; color: var(--muted); max-width: 720px; }
+.zone { fill: var(--green-tint); stroke: var(--green-line); stroke-width: 2; stroke-dasharray: 7 5; }
+.zone-label { fill: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+.zone-note { fill: var(--green); font-size: 12px; }
+.box { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; }
+.box.ai { stroke: var(--accent); }
+.box.out { fill: var(--ground); }
+.dt { fill: var(--ink); font-size: 13.5px; font-weight: 600; text-anchor: middle; }
+.ds { fill: var(--muted); font-size: 11.5px; text-anchor: middle; }
+.edge { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+.edge.ai { stroke: var(--accent); }
+.edge.leave { stroke: var(--ink); }
+.lbl { fill: var(--muted); font-size: 11.5px; }
+.lbl.ai { fill: var(--accent); font-weight: 600; }
+.lbl.leave { fill: var(--ink); font-weight: 600; }
+.arrowhead { fill: var(--muted); }
+.arrowhead.ai { fill: var(--accent); }
+.arrowhead.leave { fill: var(--ink); }
+.connections { margin-top: 48px; max-width: 860px; }
+.connections h3 { font-size: 22px; margin-bottom: 14px; }
+.table-wrap { overflow-x: auto; }
+.table-wrap table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; font-size: 15px; }
+.table-wrap th, .table-wrap td { text-align: left; vertical-align: top; padding: 12px 16px; border-top: 1px solid var(--border); }
+.table-wrap th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; border-top: 0; }
+.table-wrap td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+
 /* Sections */
 section { padding: 96px 0; }
 .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
@@ -143,6 +172,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#tour">Tour</a>
+        <a href="#how">How it works</a>
         <a href="#privacy">Privacy</a>
         <a href="#ai">Your AI</a>
       </div>
@@ -249,7 +279,136 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section id="privacy">
+  <section id="how">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">How it works</div>
+        <h2>Everything happens on your computer.</h2>
+        <p>Lumen talks to your email providers directly and keeps what it downloads on your computer. AI runs there too, unless you add your own cloud key.</p>
+      </div>
+      <figure style="margin:0">
+        <div class="diagram-scroll">
+      <svg class="diagram" viewBox="0 0 1115 710" role="img" aria-label="Diagram: inside your computer, the sync engine fetches and sends mail with your providers, saves it to the local store, and the built-in checks, the app window and the AI router all read from that store. The AI router sends text to a local model on the computer, or, only with your own key, through masking to your cloud AI. A small services part sends your profile to Lumen's server and anonymous counts to Google Analytics. Mail, AI output and passwords never cross the computer's boundary.">
+        <defs>
+          <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="a-ai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead ai" d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="a-out" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead leave" d="M0,0 L10,5 L0,10 z"/></marker>
+        </defs>
+
+        <!-- Your computer -->
+        <rect class="zone" x="250" y="34" width="620" height="606" rx="22"/>
+        <text class="zone-label" x="274" y="66">YOUR COMPUTER</text>
+        <text class="zone-note" x="846" y="66" text-anchor="end">Mail, AI output and passwords stay inside this line</text>
+
+        <!-- Row 1 -->
+        <rect class="box" x="275" y="90" width="160" height="64" rx="10"/>
+        <text class="dt" x="355" y="117">System keychain</text>
+        <text class="ds" x="355" y="136">passwords and keys</text>
+        <rect class="box" x="495" y="90" width="160" height="64" rx="10"/>
+        <text class="dt" x="575" y="117">App window</text>
+        <text class="ds" x="575" y="136">inbox, brief, Shield</text>
+        <rect class="box ai" x="715" y="90" width="135" height="64" rx="10"/>
+        <text class="dt" x="782.5" y="117">Local model</text>
+        <text class="ds" x="782.5" y="136">Ollama, LM Studio</text>
+
+        <!-- Row 2 -->
+        <rect class="box" x="275" y="240" width="160" height="64" rx="10"/>
+        <text class="dt" x="355" y="267">Sync engine</text>
+        <text class="ds" x="355" y="286">IDLE, offline outbox</text>
+        <rect class="box" x="495" y="240" width="160" height="64" rx="10"/>
+        <text class="dt" x="575" y="267">Local store</text>
+        <text class="ds" x="575" y="286">mail, search, AI output</text>
+        <rect class="box ai" x="715" y="240" width="135" height="64" rx="10"/>
+        <text class="dt" x="782.5" y="267">AI router</text>
+        <text class="ds" x="782.5" y="286">per feature, account</text>
+
+        <!-- Row 3 -->
+        <rect class="box" x="495" y="390" width="160" height="64" rx="10"/>
+        <text class="dt" x="575" y="417">Built-in checks</text>
+        <text class="ds" x="575" y="436">no AI, work offline</text>
+        <rect class="box ai" x="715" y="390" width="135" height="64" rx="10"/>
+        <text class="dt" x="782.5" y="417">Masking</text>
+        <text class="ds" x="782.5" y="436">hides card, ID numbers</text>
+
+        <!-- Row 4 -->
+        <rect class="box" x="495" y="540" width="160" height="64" rx="10"/>
+        <text class="dt" x="575" y="567">Updates and profile</text>
+        <text class="ds" x="575" y="586">no mail content</text>
+
+        <!-- Outside: left -->
+        <rect class="box out" x="6" y="208" width="160" height="128" rx="12"/>
+        <text class="dt" x="86" y="236">Your mail providers</text>
+        <text class="ds" x="86" y="260">Gmail &#183; Outlook</text>
+        <text class="ds" x="86" y="278">iCloud &#183; Yahoo</text>
+        <text class="ds" x="86" y="296">any IMAP host</text>
+
+        <!-- Outside: right -->
+        <rect class="box out" x="935" y="390" width="160" height="64" rx="10"/>
+        <text class="dt" x="1015" y="417">Your cloud AI</text>
+        <text class="ds" x="1015" y="436">optional, your own key</text>
+        <rect class="box out" x="935" y="530" width="160" height="72" rx="10"/>
+        <text class="dt" x="1015" y="560">Lumen's server</text>
+        <text class="ds" x="1015" y="579">no mail, no passwords</text>
+        <rect class="box out" x="935" y="635" width="160" height="60" rx="10"/>
+        <text class="dt" x="1015" y="660">Google Analytics</text>
+        <text class="ds" x="1015" y="678">usage counts</text>
+
+        <!-- Mail in and out (crosses the line) -->
+        <line class="edge leave" x1="168" y1="258" x2="273" y2="258" marker-start="url(#a-out)" marker-end="url(#a-out)"/>
+        <text class="lbl leave" x="207" y="250" text-anchor="middle">your mail</text>
+        <text class="lbl" x="207" y="280" text-anchor="middle">IMAP / SMTP</text>
+
+        <!-- Inside edges -->
+        <line class="edge" x1="355" y1="156" x2="355" y2="238" marker-end="url(#a)"/>
+        <text class="lbl" x="363" y="202">signs in</text>
+        <line class="edge" x1="437" y1="272" x2="493" y2="272" marker-end="url(#a)"/>
+        <text class="lbl" x="465" y="264" text-anchor="middle">saves</text>
+        <line class="edge" x1="575" y1="238" x2="575" y2="156" marker-end="url(#a)"/>
+        <text class="lbl" x="583" y="202">shows</text>
+        <line class="edge" x1="575" y1="306" x2="575" y2="388" marker-end="url(#a)"/>
+        <text class="lbl" x="583" y="352">every new email</text>
+        <line class="edge ai" x1="657" y1="272" x2="713" y2="272" marker-end="url(#a-ai)"/>
+        <text class="lbl ai" x="685" y="264" text-anchor="middle">asks</text>
+        <line class="edge ai" x1="782.5" y1="238" x2="782.5" y2="156" marker-end="url(#a-ai)"/>
+        <text class="lbl ai" x="774" y="202" text-anchor="end">on this computer</text>
+        <line class="edge ai" x1="782.5" y1="306" x2="782.5" y2="388" marker-end="url(#a-ai)"/>
+        <text class="lbl ai" x="774" y="352" text-anchor="end">with your key</text>
+
+        <!-- AI out (crosses the line) -->
+        <line class="edge ai" x1="852" y1="422" x2="933" y2="422" marker-end="url(#a-ai)"/>
+        <text class="lbl ai" x="903" y="412" text-anchor="middle">masked</text>
+
+        <!-- Services out (cross the line) -->
+        <line class="edge leave" x1="657" y1="556" x2="933" y2="556" marker-end="url(#a-out)"/>
+        <text class="lbl leave" x="672" y="548">name, email, country, OS</text>
+        <line class="edge" x1="933" y1="584" x2="657" y2="584" marker-end="url(#a)"/>
+        <text class="lbl" x="672" y="600">signed updates, notices</text>
+        <polyline class="edge leave" points="575,606 575,665 933,665" marker-end="url(#a-out)"/>
+        <text class="lbl leave" x="672" y="659">anonymous counts, if on</text>
+      </svg>
+        </div>
+        <figcaption class="diagram-cap">Everything inside the green line stays on your computer. Only the arrows that cross it carry anything out, and each is labelled with what it carries. Violet marks the AI path: the router picks a local model, or your cloud key after masking, per feature and per account.</figcaption>
+      </figure>
+      <div class="connections">
+        <h3>Every connection Lumen makes</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Where</th><th>What goes</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td>Your mail providers</td><td>Your own mail, fetched and sent over IMAP and SMTP</td><td>Always, directly; new mail arrives over IMAP IDLE</td></tr>
+          <tr><td>Your cloud AI</td><td>Only the email text a feature needs, with card, passport and account numbers masked</td><td>Only for features you route to your own key; never for accounts marked local only</td></tr>
+          <tr><td>Lumen's server</td><td>Name, email, country, OS, app version, notification choices and a device ID</td><td>At sign-up and when checking for updates and notices</td></tr>
+          <tr><td>Google Analytics</td><td>Anonymous counts of which features are used</td><td>If usage stats are on; off by default in the EU and UK</td></tr>
+          <tr><td>Senders' servers</td><td>Image requests, unsubscribe requests, brand logos</td><td>Images when you click Show images, unsubscribe when you click it, logos once per sender domain (can be turned off)</td></tr>
+        </tbody>
+      </table>
+    </div>
+        <p class="note">Each connection is listed in the app's network activity log with where it went and what it carried.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="band">
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Privacy</div>
@@ -281,7 +440,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section id="ai" class="band">
+  <section id="ai">
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Bring your own AI</div>
@@ -304,7 +463,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section>
+  <section class="band">
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Accounts</div>
@@ -321,7 +480,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section class="closing band">
+  <section class="closing">
     <div class="wrap">
       <h2>Coming to Mac, Windows and Linux.</h2>
       <p>Lumen is in development. A light Rust core and the system web view keep it fast and easy on memory.</p>
