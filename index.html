@@ -44,13 +44,14 @@ h1, h2, h3 { font-family: "Bricolage Grotesque", Inter, sans-serif; color: var(-
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { color: var(--hero-text); text-decoration: none; font-size: 14px; font-weight: 500; }
 .nav-links a:hover { color: #fff; }
-.hero-body { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; padding: 72px 0 0; }
+.hero-body { padding: 72px 0 0; text-align: center; }
+.hero-body .cta { justify-content: center; }
 .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #B9F0CF;
   background: rgba(47,180,99,.14); border: 1px solid rgba(47,180,99,.4); padding: 5px 12px; border-radius: 999px; }
 .pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--green-line); }
 .hero h1 { color: #fff; font-size: clamp(40px, 6vw, 64px); margin: 20px 0 18px; letter-spacing: -.02em; }
 .hero h1 em { font-style: normal; color: #A897FF; }
-.hero p.lede { font-size: 19px; max-width: 520px; margin: 0 0 30px; }
+.hero p.lede { font-size: 19px; max-width: 620px; margin: 0 auto 30px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 10px; font-weight: 600;
   font-size: 15px; text-decoration: none; }
@@ -60,24 +61,19 @@ h1, h2, h3 { font-family: "Bricolage Grotesque", Inter, sans-serif; color: var(-
 .btn.ghost:hover { background: rgba(255,255,255,.06); }
 .os { font-size: 13px; color: #8C92A5; margin-top: 14px; }
 
-/* Mock window */
-.window { background: var(--surface); border-radius: 16px 16px 0 0; box-shadow: 0 30px 80px rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.08); border-bottom: 0; color: var(--text); font-size: 13px; align-self: end; }
-.bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border); }
-.bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
-.digest { margin: 14px; padding: 12px 14px; border-radius: 12px; background: var(--accent-tint); color: var(--ink); }
-.digest b { color: var(--accent); }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.chip { font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); color: var(--text); }
-.row { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; padding: 10px 14px; border-top: 1px solid var(--border); }
-.av { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #fff; font-size: 13px; }
-.row .who { color: var(--ink); font-weight: 600; }
-.row .line { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.row .line .spark { color: var(--accent); }
-.tag { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 6px; white-space: nowrap; }
-.tag.reply { background: var(--accent-tint); color: var(--accent); }
-.tag.code { background: var(--green-tint); color: var(--green); font-family: "JetBrains Mono", monospace; }
-.tag.held { background: #FDECEC; color: #B42318; }
+/* Screenshots */
+.shot { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(18,20,28,.14); background: var(--surface); }
+.hero .shot { border-color: rgba(255,255,255,.1); border-radius: 14px 14px 0 0; border-bottom: 0; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+.hero-shot { margin-top: 56px; }
+.tour { display: grid; gap: 88px; }
+.stop { display: grid; grid-template-columns: 1fr 1.9fr; gap: 48px; align-items: center; }
+.stop:nth-child(even) { grid-template-columns: 1.9fr 1fr; }
+.stop:nth-child(even) .copy { order: 2; }
+.stop h3 { font-size: 26px; margin: 0 0 10px; }
+.stop p { margin: 0; font-size: 16px; }
+.stop .eyebrow { margin-bottom: 8px; }
+.ai-shot { margin-top: 40px; }
 
 /* Sections */
 section { padding: 96px 0; }
@@ -120,7 +116,10 @@ footer { padding: 32px 0 48px; border-top: 1px solid var(--border); font-size: 1
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
 @media (max-width: 900px) {
-  .hero-body { grid-template-columns: 1fr; padding-top: 48px; }
+  .hero-body { padding-top: 48px; }
+  .stop, .stop:nth-child(even) { grid-template-columns: 1fr; gap: 20px; }
+  .stop:nth-child(even) .copy { order: 0; }
+  .tour { gap: 56px; }
   .grid { grid-template-columns: 1fr 1fr; }
   .accounts { grid-template-columns: repeat(3, 1fr); }
 }
@@ -143,6 +142,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a class="brand" href="#"><img src="icon.png" alt="">Lumen</a>
       <div class="nav-links">
         <a href="#features">Features</a>
+        <a href="#tour">Tour</a>
         <a href="#privacy">Privacy</a>
         <a href="#ai">Your AI</a>
       </div>
@@ -159,34 +159,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
         <p class="os">For macOS, Windows and Linux · In development, not yet released</p>
       </div>
-
-      <div class="window" aria-hidden="true">
-        <div class="bar"><span></span><span></span><span></span></div>
-        <div class="digest">
-          <b>Since 2 PM:</b> 12 new. Only 3 need you.
-          <div class="chips"><span class="chip">2 need a reply</span><span class="chip">1 meeting</span><span class="chip">1 deadline</span></div>
-        </div>
-        <div class="row">
-          <div class="av" style="background:#E8833A">M</div>
-          <div><div class="who">Marco Rossi</div><div class="line"><span class="spark">✦</span> Invoice for October; asks if Friday works to pay</div></div>
-          <span class="tag reply">Needs reply</span>
-        </div>
-        <div class="row">
-          <div class="av" style="background:#2F80ED">A</div>
-          <div><div class="who">Airline</div><div class="line"><span class="spark">✦</span> Check-in opens tomorrow at 9:40 AM</div></div>
-          <span class="tag reply">Travel</span>
-        </div>
-        <div class="row">
-          <div class="av" style="background:#17633A">B</div>
-          <div><div class="who">Your bank</div><div class="line">Sign-in code, hides in 10 minutes</div></div>
-          <span class="tag code">482 913</span>
-        </div>
-        <div class="row">
-          <div class="av" style="background:#B42318">P</div>
-          <div><div class="who">"PayPaI Support"</div><div class="line">Held by Shield: lookalike sender, failed DKIM</div></div>
-          <span class="tag held">Held</span>
-        </div>
-      </div>
+    </div>
+    <div class="hero-shot">
+      <img class="shot" src="shots/read.jpg" width="2400" height="1550"
+           alt="Lumen's inbox with an email open: Catch me up has summarised the thread, listed a to-do and offered to add the meeting to the calendar, written by a local model.">
     </div>
   </div>
 </header>
@@ -234,7 +210,46 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section id="privacy" class="band">
+  <section id="tour" class="band">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">A closer look</div>
+        <h2>The real app, with a demo inbox.</h2>
+        <p>Every screen below is Lumen running on a Mac with a local model. The mail is made up.</p>
+      </div>
+      <div class="tour">
+        <div class="stop">
+          <div class="copy">
+            <div class="eyebrow">Today</div>
+            <h3>Your morning in 60 seconds</h3>
+            <p>The first open of the day starts with a short brief: how many emails need you, what came in overnight, and how Lumen sorted the rest. Ask about your mail in plain words right from there.</p>
+          </div>
+          <img class="shot" src="shots/today.jpg" width="2400" height="1550" loading="lazy"
+               alt="The Today screen: a morning brief written by a local model, a breakdown of how Lumen sorted the night's mail, and the emails that need you today.">
+        </div>
+        <div class="stop">
+          <div class="copy">
+            <div class="eyebrow">Shield</div>
+            <h3>Phishing stopped, with reasons</h3>
+            <p>Suspicious mail is held back before it reaches your inbox. Lumen says why in plain words: a link that lies about where it goes, pressure tactics, a sender you have never heard from. Every check runs on your computer.</p>
+          </div>
+          <img class="shot" src="shots/shield.jpg" width="2400" height="1550" loading="lazy"
+               alt="The Shield screen: a quarantined email with a risk score, four numbered reasons it was stopped, and buttons to delete, report or release it.">
+        </div>
+        <div class="stop">
+          <div class="copy">
+            <div class="eyebrow">Codes</div>
+            <h3>Sign-in codes, kept short-lived</h3>
+            <p>One-time codes are pulled out of your mail and ready to copy. They stay masked until you reveal them, hide after 10 minutes and are deleted after 24 hours. They never show in search or notifications.</p>
+          </div>
+          <img class="shot" src="shots/codes.jpg" width="2400" height="1550" loading="lazy"
+               alt="The Codes screen: an active sign-in code, masked, with a countdown to when it hides and a timeline of when it will be deleted.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Privacy</div>
@@ -266,7 +281,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section id="ai">
+  <section id="ai" class="band">
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Bring your own AI</div>
@@ -284,10 +299,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <span>vLLM</span>
       </div>
       <p class="note">Card, passport and account numbers are masked before anything goes to a cloud AI, and every request is listed in the network activity log.</p>
+      <img class="shot ai-shot" src="shots/ai.jpg" width="2400" height="1550" loading="lazy"
+           alt="Lumen's AI settings: a table of features, each routed to a local Ollama model, with where the email text goes shown as This computer.">
     </div>
   </section>
 
-  <section class="band">
+  <section>
     <div class="wrap">
       <div class="head">
         <div class="eyebrow">Accounts</div>
@@ -304,7 +321,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section class="closing">
+  <section class="closing band">
     <div class="wrap">
       <h2>Coming to Mac, Windows and Linux.</h2>
       <p>Lumen is in development. A light Rust core and the system web view keep it fast and easy on memory.</p>
