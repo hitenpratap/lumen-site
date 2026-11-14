@@ -26,7 +26,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
 @keyframes dash{to{stroke-dashoffset:-24}}
 @keyframes swap{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes breathe{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.85;transform:scale(1.06)}}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,214,154,.55)}100%{box-shadow:0 0 0 10px rgba(111,214,154,0)}}
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}.d4{animation-delay:.44s}
 .tilt{animation:tilt 1.7s .5s cubic-bezier(.16,.84,.24,1) both;transform-origin:50% 0}
@@ -37,7 +36,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
 .flow{stroke-dasharray:6 6;animation:dash 1.1s linear infinite}
 .swap{animation:swap .55s cubic-bezier(.2,.7,.2,1) both}
 .breathe{animation:breathe 9s ease-in-out infinite}
-.live{animation:pulse 1.8s ease-out infinite}
 .lift{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s}
 .lift:hover{transform:translateY(-4px);border-color:#3A3F52}
 .dim{transition:opacity .45s ease}
@@ -63,10 +61,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
     <a href="#privacy" style="color: #B4B9C9; text-decoration: none">Privacy</a>
     <a href="#download" style="color: #B4B9C9; text-decoration: none">Download</a>
   </nav>
-  <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #B9F0CF; border: 1px solid rgba(47,180,99,.45); background: rgba(47,180,99,.1); padding: 6px 12px; border-radius: 999px">
-    <span class="live" style="width: 7px; height: 7px; border-radius: 50%; background: #6FD69A"></span>
-    <span>In development</span>
-  </span>
 </header>
 
 <!-- HERO -->
