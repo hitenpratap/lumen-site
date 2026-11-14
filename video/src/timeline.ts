@@ -27,7 +27,7 @@ export const SCENES: ReadonlyArray<{id: string; component: React.FC; duration: n
 	{id: 'ColdOpen', component: ColdOpen, duration: 240, enter: 'none'},
 	{id: 'Title', component: Title, duration: 210, enter: 'zoom'},
 	{id: 'LocalOnly', component: LocalOnly, duration: 450, enter: 'leak'},
-	{id: 'BringYourOwnAI', component: BringYourOwnAI, duration: 420, enter: 'zoom'},
+	{id: 'BringYourOwnAI', component: BringYourOwnAI, duration: 480, enter: 'zoom'},
 	{id: 'AiRouting', component: AiRouting, duration: 450, enter: 'zoom'},
 	{id: 'MorningBrief', component: MorningBrief, duration: 300, enter: 'leak'},
 	{id: 'SmartStacks', component: SmartStacks, duration: 330, enter: 'zoom'},

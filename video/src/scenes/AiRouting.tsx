@@ -6,12 +6,12 @@ import {C, mono} from '../theme';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const COLS = '600px 560px 1fr';
 
-const ROWS: {f: string; u: string; cloud?: boolean}[] = [
+const ROWS: {f: string; u: string; cloud?: boolean; host?: string}[] = [
 	{f: 'Labels, spam, phishing, codes', u: 'Built into Lumen'},
 	{f: 'Search index', u: 'nomic-embed-text · Ollama'},
 	{f: 'Summaries and morning brief', u: 'llama3.1:8b · Ollama'},
 	{f: 'Draft replies', u: 'Claude · your key', cloud: true},
-	{f: 'Ask-anything answers', u: 'llama3.1:8b · Ollama'},
+	{f: 'Ask-anything answers', u: 'GPT · your OpenAI key', cloud: true, host: 'api.openai.com'},
 ];
 
 const Row: React.FC<{readonly r: (typeof ROWS)[number]; readonly delay: number}> = ({r, delay}) => (
@@ -32,7 +32,7 @@ const Row: React.FC<{readonly r: (typeof ROWS)[number]; readonly delay: number}>
 			<div style={{fontFamily: mono, fontSize: 26, color: r.cloud ? C.violetPale : C.body}}>{r.u}</div>
 			<div>
 				{r.cloud ? (
-					<Pill tone="violet" size={24}>api.anthropic.com, your account</Pill>
+					<Pill tone="violet" size={24}>{r.host ?? 'api.anthropic.com'}, your account</Pill>
 				) : (
 					<Pill tone="green" size={24}>This computer</Pill>
 				)}
@@ -111,6 +111,9 @@ export const AiRouting: React.FC = () => {
 							<Row key={r.f} r={r} delay={46 + i * 22} />
 						))}
 					</div>
+				</Rise>
+				<Rise delay={46 + ROWS.length * 22 + 6} y={16} blur={6} style={{textAlign: 'center', marginTop: 28, fontSize: 32, color: C.body}}>
+					Mix local and cloud, per feature. Any OpenAI-compatible provider.
 				</Rise>
 			</div>
 
