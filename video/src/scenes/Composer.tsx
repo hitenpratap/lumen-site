@@ -55,7 +55,7 @@ export const Composer: React.FC = () => {
 					<Kicker>AI composer</Kicker>
 				</Rise>
 				<Rise delay={14} style={{marginTop: 14}}>
-					<Headline size={88}>Say what you mean. Lumen drafts it.</Headline>
+					<Headline size={88}>Say what you mean. Roost drafts it.</Headline>
 				</Rise>
 			</AbsoluteFill>
 

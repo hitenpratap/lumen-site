@@ -1,13 +1,13 @@
 import {AbsoluteFill, Composition, Folder} from 'remotion';
 import {FilmFinish} from './kit';
-import {LumenExplainer} from './LumenExplainer';
+import {RoostExplainer} from './RoostExplainer';
 import {SCENES, TOTAL} from './timeline';
 
 export const RemotionRoot: React.FC = () => (
 	<>
 		<Composition
-			id="LumenExplainer"
-			component={LumenExplainer}
+			id="RoostExplainer"
+			component={RoostExplainer}
 			durationInFrames={TOTAL}
 			fps={30}
 			width={1920}

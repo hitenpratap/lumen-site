@@ -151,7 +151,7 @@ export const BringYourOwnAI: React.FC = () => {
 				</Rise>
 				<div style={{position: 'relative', height: 50, width: 1700}}>
 					<Rise delay={26} style={{position: 'absolute', inset: 0, opacity: subA}}>
-						<Sub size={36}>If it speaks the OpenAI API, Lumen can use it. On your computer or in the cloud.</Sub>
+						<Sub size={36}>If it speaks the OpenAI API, Roost can use it. On your computer or in the cloud.</Sub>
 					</Rise>
 					<div style={{position: 'absolute', inset: 0, opacity: inn, translate: `0 ${(1 - inn) * 16}px`}}>
 						<Sub size={38}>A provider is just a URL, a key and a model.</Sub>

@@ -7,7 +7,7 @@ const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const COLS = '600px 560px 1fr';
 
 const ROWS: {f: string; u: string; cloud?: boolean; host?: string}[] = [
-	{f: 'Labels, spam, phishing, codes', u: 'Built into Lumen'},
+	{f: 'Labels, spam, phishing, codes', u: 'Built into Roost'},
 	{f: 'Search index', u: 'nomic-embed-text · Ollama'},
 	{f: 'Summaries and morning brief', u: 'llama3.1:8b · Ollama'},
 	{f: 'Draft replies', u: 'Claude · your key', cloud: true},

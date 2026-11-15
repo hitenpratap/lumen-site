@@ -8,7 +8,7 @@ import {LEAK, SCENES, TRANSITION} from './timeline';
 
 export type ExplainerProps = {readonly grain: number};
 
-export const LumenExplainer: React.FC<ExplainerProps> = ({grain}) => (
+export const RoostExplainer: React.FC<ExplainerProps> = ({grain}) => (
 	<AbsoluteFill style={{background: C.bg}}>
 		<TransitionSeries>
 			{SCENES.flatMap((s, i) => [

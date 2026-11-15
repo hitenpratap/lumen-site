@@ -1,5 +1,5 @@
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
-import {Headline, Kicker, Letterbox, LumenMark, Rise, Scene, Sub} from '../kit';
+import {Headline, Kicker, Letterbox, RoostMark, Rise, Scene, Sub} from '../kit';
 import {C, display} from '../theme';
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -73,10 +73,10 @@ export const Close: React.FC = () => {
 			<Flare />
 			{frame >= T - 4 ? (
 				<AbsoluteFill style={{alignItems: 'center', paddingTop: 230, gap: 28, textAlign: 'center'}}>
-					<LumenMark size={200} delay={T + 2} />
+					<RoostMark size={200} delay={T + 2} />
 					<Rise delay={T + 20} blur={24}>
 						<Headline size={176} style={{fontFamily: display, letterSpacing: '-0.05em'}}>
-							Lumen
+							Roost
 						</Headline>
 					</Rise>
 					<Rise delay={T + 40}>

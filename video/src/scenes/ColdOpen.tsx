@@ -80,7 +80,7 @@ export const ColdOpen: React.FC = () => {
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', textAlign: 'center', gap: 22}}>
 				<Rise delay={140}>
 					<Sub size={44} style={{color: C.muted}}>
-						Lumen keeps it
+						Roost keeps it
 					</Sub>
 				</Rise>
 				<Rise delay={154}>

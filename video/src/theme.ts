@@ -2,7 +2,7 @@ import {loadFont as loadDisplay} from '@remotion/google-fonts/BricolageGrotesque
 import {loadFont as loadUi} from '@remotion/google-fonts/Inter';
 import {loadFont as loadMono} from '@remotion/google-fonts/JetBrainsMono';
 
-// Same fonts and colours as the landing page (lumen-site/index.html).
+// Same fonts and colours as the landing page (roost-site/index.html).
 export const display = loadDisplay('normal', {
 	weights: ['500', '700', '800'],
 	subsets: ['latin'],

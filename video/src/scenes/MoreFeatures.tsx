@@ -57,7 +57,7 @@ export const MoreFeatures: React.FC = () => {
 					<Dot color="#4C8DFF" label="Work" delay={70} />
 					<Dot color="#3DD68C" label="Family" delay={80} />
 				</Card>
-				<Card icon="book" title="Rules in plain words" note="Teach Lumen what you want." delay={56}>
+				<Card icon="book" title="Rules in plain words" note="Teach Roost what you want." delay={56}>
 					<div style={{fontFamily: mono, fontSize: 22, color: C.violetPale, lineHeight: 1.4}}>
 						<Typewriter text="Never send emails from my lawyer to a cloud AI." delay={84} cps={24} />
 					</div>

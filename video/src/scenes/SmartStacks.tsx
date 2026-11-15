@@ -231,7 +231,7 @@ const Bundle: React.FC = () => {
 					LEARNS FROM YOU
 				</div>
 				<Headline size={64} style={{lineHeight: 1.1}}>
-					Move a thread once and Lumen learns.
+					Move a thread once and Roost learns.
 				</Headline>
 				<Sub size={34} style={{marginTop: 20}}>
 					On this computer, never written to your mail server.

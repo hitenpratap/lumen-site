@@ -173,17 +173,22 @@ export const Count: React.FC<{readonly from?: number; readonly to: number; reado
 	return <>{Math.round(interpolate(frame, [delay, delay + dur], [from, to], {...clamp, easing: easeOut}))}</>;
 };
 
-/** The Lumen mark: violet tile, white ring that draws itself, centre dot, orange spark. */
-export const LumenMark: React.FC<{readonly size?: number; readonly delay?: number; readonly style?: CSSProperties}> = ({
+/** The Roost mark: violet tile, a white bird that settles onto its perch, orange eye. */
+export const RoostMark: React.FC<{readonly size?: number; readonly delay?: number; readonly style?: CSSProperties}> = ({
 	size = 160,
 	delay = 0,
 	style,
 }) => {
 	const tile = useEnter(delay, 22);
-	const ring = useEnter(delay + 8, 34);
-	const dot = useEnter(delay + 26, 18);
-	const spark = useEnter(delay + 36, 16);
-	const circ = 2 * Math.PI * 24;
+	const perch = useEnter(delay + 8, 20);
+	const body = useEnter(delay + 18, 22);
+	const bits = useEnter(delay + 28, 16);
+	const eye = useEnter(delay + 38, 14);
+	const pop = (k: number, ox: number, oy: number): CSSProperties => ({
+		opacity: k,
+		scale: String(0.6 + 0.4 * k),
+		transformOrigin: `${ox}px ${oy}px`,
+	});
 	return (
 		<svg width={size} height={size} viewBox="0 0 100 100" style={{overflow: 'visible', ...style}}>
 			<rect
@@ -195,19 +200,21 @@ export const LumenMark: React.FC<{readonly size?: number; readonly delay?: numbe
 				fill={C.violet}
 				style={{opacity: tile, scale: String(0.7 + 0.3 * tile), transformOrigin: '50px 50px'}}
 			/>
-			<circle
-				cx="50"
-				cy="52"
-				r="24"
-				fill="none"
+			<line
+				x1="30"
+				y1="74"
+				x2="68"
+				y2="74"
 				stroke="#fff"
-				strokeWidth="9"
+				strokeWidth="6"
 				strokeLinecap="round"
-				strokeDasharray={`${circ * 0.83 * ring} ${circ}`}
-				style={{rotate: '-25deg', transformOrigin: '50px 52px'}}
+				strokeDasharray={`${38 * perch} 38`}
 			/>
-			<circle cx="50" cy="52" r={9 * dot} fill="#fff" />
-			<circle cx="67.5" cy="31" r={6.5 * spark} fill={C.orange} />
+			<circle cx="46" cy="55.5" r="18" fill="#fff" style={pop(body, 46, 73.5)} />
+			<circle cx="60" cy="37" r="11" fill="#fff" style={pop(body, 46, 71)} />
+			<path d="M33 49 L19 63 L37 69 Z" fill="#fff" style={pop(bits, 37, 60)} />
+			<path d="M69 33 L78 38 L69 42 Z" fill="#fff" style={pop(bits, 69, 38)} />
+			<circle cx="62" cy="35.5" r={3.4 * eye} fill={C.orange} />
 		</svg>
 	);
 };
@@ -322,7 +329,7 @@ export const Scene: React.FC<{
 };
 
 /**
- * A real Lumen screenshot (public/shots/*.jpg, 2400×1550) in a floating app window.
+ * A real Roost screenshot (public/shots/*.jpg, 2400×1550) in a floating app window.
  * The window tilts in with perspective, then the camera eases from `zoomFrom` to `zoomTo`
  * around (`focusX`%, `focusY`%) of the screenshot over `move` frames.
  * Children render on top of the screenshot in the same zoomed space (use % positions).

@@ -181,7 +181,7 @@ const Server: React.FC = () => {
 	const refused = ['No password', 'No email content', 'No AI prompts'];
 	const note = useEnter(REFUSE + 60, 20);
 	return (
-		<Card d={d} icon="server" title="Lumen's server" tag={<Pill tone="violet" size={22}>Only this</Pill>}>
+		<Card d={d} icon="server" title="Roost's server" tag={<Pill tone="violet" size={22}>Only this</Pill>}>
 			<Desc>For signed updates, security patches and notices.</Desc>
 			<div style={{display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 6}}>
 				{fields.map((f, i) => (

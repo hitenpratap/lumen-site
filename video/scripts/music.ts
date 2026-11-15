@@ -1,4 +1,4 @@
-// Original score for the Lumen film, synthesised from scratch: no samples, nothing to license.
+// Original score for the Roost film, synthesised from scratch: no samples, nothing to license.
 // Cue points come from src/timeline.ts, so re-run this after changing scene durations:
 //   bun scripts/music.ts && bunx remotion ffmpeg -y -i out/music.wav -c:a aac -b:a 192k public/music.m4a
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';

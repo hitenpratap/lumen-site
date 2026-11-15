@@ -65,13 +65,13 @@ const UpdateCard: React.FC = () => {
 							<Icon name="download" size={48} color={C.violetPale} />
 						</div>
 						<div style={{fontFamily: display, fontWeight: 800, fontSize: 56, color: C.white, letterSpacing: '-0.03em'}}>
-							Lumen 1.1 is ready
+							Roost 1.1 is ready
 						</div>
 					</div>
 					<div style={{display: 'flex', alignItems: 'center', gap: 24, padding: '22px 28px', borderRadius: 20, background: 'rgba(255,255,255,.04)', border: `1.5px solid ${C.line}`}}>
 						<div style={{opacity: key, display: 'flex', alignItems: 'center', gap: 14, fontFamily: ui, fontSize: 28, color: C.body}}>
 							<Icon name="key" size={36} color={C.violetSoft} />
-							Lumen's key
+							Roost's key
 						</div>
 						<div style={{flex: 1, height: 4, borderRadius: 2, background: C.line2, position: 'relative'}}>
 							<div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${trav * 100}%`, background: C.green, borderRadius: 2}} />
@@ -164,8 +164,8 @@ const Choices: React.FC = () => {
 const ROWS: {t: string; dest: string; what: string; owner: string; tone: 'grey' | 'green' | 'violet' | 'amber'}[] = [
 	{t: '09:41:07', dest: 'imap.gmail.com', what: 'new mail', owner: 'Your provider', tone: 'grey'},
 	{t: '09:41:12', dest: 'localhost:11434', what: 'summary request', owner: 'Local model', tone: 'green'},
-	{t: '09:41:30', dest: 'Lumen server', what: 'update check (app version, OS)', owner: 'Lumen', tone: 'violet'},
-	{t: '09:41:31', dest: 'github.com', what: 'Lumen 1.1 download', owner: 'Lumen', tone: 'violet'},
+	{t: '09:41:30', dest: 'Roost server', what: 'update check (app version, OS)', owner: 'Roost', tone: 'violet'},
+	{t: '09:41:31', dest: 'github.com', what: 'Roost 1.1 download', owner: 'Roost', tone: 'violet'},
 	{t: '09:41:44', dest: 'google-analytics.com', what: '3 anonymous events', owner: 'Google', tone: 'amber'},
 ];
 
