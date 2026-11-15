@@ -42,6 +42,45 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
 @supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 45%}}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media (max-width: 760px){.chip{display:none}.navlinks{display:none}}
+.mono-k{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #2E3342;font-size:13px;color:#D3D6E0}
+.seek{-webkit-appearance:none;appearance:none;flex:1;min-width:60px;height:6px;margin:0;border-radius:999px;background:linear-gradient(90deg,#8B74FF var(--p,1%),#23273A var(--p,1%));cursor:pointer}
+.seek::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:#8B74FF;border:0}
+.seek::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#8B74FF;border:0}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(139,116,255,.6)}100%{box-shadow:0 0 0 12px rgba(139,116,255,0)}}
+.ring{animation:ring 1.6s ease-out infinite}
+.os-tab{width:100%;display:flex;align-items:center;gap:14px;min-height:84px;padding:14px 18px;border-radius:18px;color:#FFFFFF;text-align:left;background:#12141C;border:1px solid #23273A;transition:border-color .3s,box-shadow .3s,background .3s,transform .35s cubic-bezier(.2,.7,.2,1)}
+.os-tab:hover{transform:translateY(-3px)}
+.os-tab[aria-selected="true"]{background:#17152B;border-color:#8B74FF;box-shadow:0 0 0 4px rgba(139,116,255,.14),0 24px 60px rgba(91,61,245,.28)}
+.os-tile{flex:none;width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;transition:background .3s;background:#181B25;color:#E7E8EE}
+.os-tab[aria-selected="true"] .os-tile{background:#5B3DF5;color:#FFFFFF}
+.os-check{margin-left:auto;flex:none;visibility:hidden}
+.os-tab[aria-selected="true"] .os-check{visibility:visible}
+.dl-panel{display:flex;flex-wrap:wrap;border-radius:28px;overflow:hidden;background:#12141C;border:1px solid #2A2E3D;box-shadow:0 -10px 100px rgba(91,61,245,.18),0 40px 120px rgba(0,0,0,.55)}
+.dl-side{flex:1 1 400px;min-width:0;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:26px}
+.dl-start{flex:1 1 460px;min-width:0;padding:clamp(24px,4vw,44px);background:#0E1017;border-left:1px solid #1C1F2A;display:flex;flex-direction:column;gap:22px}
+.dl-logo{flex:none;display:flex;align-items:center;justify-content:center;width:76px;height:76px;border-radius:22px;background:#5B3DF5;color:#FFFFFF;box-shadow:0 16px 40px rgba(91,61,245,.45)}
+.dl-name{font-family:'Bricolage Grotesque',Inter,sans-serif;font-size:clamp(32px,3.6vw,44px);font-weight:800;line-height:1.05;letter-spacing:-0.03em;color:#FFFFFF}
+.dl-facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dl-facts li{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:#181B25;border:1px solid #2E3342;font-size:14px;color:#D3D6E0}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:0 28px;border-radius:16px;background:#5B3DF5;color:#FFFFFF;font-size:17px;font-weight:700;text-decoration:none;box-shadow:0 14px 40px rgba(91,61,245,.5)}
+.dl-btn:hover{color:#FFFFFF;background:#6A4FF7}
+.dl-file{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:#8A90A4;text-align:center}
+.dl-all{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#A996FF;font-size:14px;font-weight:600;text-decoration:none}
+.dl-headline{font-family:'Bricolage Grotesque',Inter,sans-serif;font-size:24px;font-weight:700;line-height:1.2;color:#FFFFFF}
+.fmt{min-height:40px;padding:0 16px;border-radius:10px;border:0;font-size:14px;font-weight:600;background:transparent;color:#B4B9C9}
+.fmt[aria-checked="true"]{background:#5B3DF5;color:#FFFFFF}
+.mock{border-radius:16px;overflow:hidden;border:1px solid #2E3342;background:#181B25;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.mock-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#1E2130;border-bottom:1px solid #2E3342}
+.dot{width:11px;height:11px;border-radius:50%}
+.num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:12px;font-weight:700}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.steps li{display:flex;gap:14px;padding:12px 0;border-top:1px solid #1C1F2A}
+.steps .n{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:14px;font-weight:700;background:#181B25;color:#B4B9C9;border:1px solid #2E3342}
+.steps .n.key{background:#5B3DF5;color:#FFFFFF;border:0;box-shadow:0 0 0 4px rgba(91,61,245,.2)}
+.steps .s{display:flex;flex-direction:column;gap:2px;min-width:0}
+.steps b{font-weight:600;color:#FFFFFF}
+.steps .s span{font-size:14px;color:#9AA0B4}
 </style>
 </head>
 <body>
@@ -123,18 +162,44 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
 </section>
 
 <!-- FILM -->
-<section id="film" style="padding: 120px 24px 0">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-    <div class="reveal" style="max-width: 720px; display: flex; flex-direction: column; gap: 14px">
-      <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: #A996FF">The film · 2:55 · sound on</span>
-      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.03em; color: #FFFFFF">Lumen in three minutes.</h2>
-      <p id="film-desc" style="margin: 0; font-size: 17px; color: #9AA0B4">Every feature, and exactly what leaves your computer: your mail goes only to your own provider, AI runs where you choose, and Lumen's server gets just enough for signed updates and notices. Usage stats are anonymous and can be turned off.</p>
+<section id="film" style="position: relative; padding: 120px 24px 0">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
+    <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+      <div style="flex: 1 1 520px; min-width: 0; max-width: 720px; display: flex; flex-direction: column; gap: 14px">
+        <span class="mono-k" style="color: #A996FF">The film</span>
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(36px, 4.6vw, 60px); line-height: 1.02; letter-spacing: -0.03em; color: #FFFFFF">Lumen in three minutes.</h2>
+        <p id="film-desc" style="margin: 0; font-size: 17px; color: #9AA0B4">Every feature, and exactly what leaves your computer: your mail goes only to your own provider, AI runs where you choose, and Lumen's server gets just enough for signed updates and notices. Usage stats are anonymous and can be turned off.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span class="pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A996FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+          <span>2:55</span>
+        </span>
+        <span class="pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A996FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg>
+          <span>Sound on</span>
+        </span>
+      </div>
     </div>
-    <div class="reveal" style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: #000; box-shadow: 0 -10px 120px rgba(91,61,245,.25), 0 40px 120px rgba(0,0,0,.6)">
-      <video controls playsinline preload="metadata" poster="media/lumen-film-poster.jpg" aria-describedby="film-desc" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9">
-        <source src="media/lumen-film.mp4" type="video/mp4">
-        <a href="media/lumen-film.mp4">Download the Lumen film (MP4)</a>
-      </video>
+
+    <div class="reveal" style="display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); background: #000000; box-shadow: 0 -10px 120px rgba(91,61,245,.25), 0 40px 120px rgba(0,0,0,.6)">
+      <div style="position: relative">
+        <video id="film-video" playsinline preload="metadata" poster="media/lumen-film-poster.jpg" aria-describedby="film-desc" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #000000; cursor: pointer">
+          <source src="media/lumen-film.mp4" type="video/mp4">
+          <a href="media/lumen-film.mp4">Download the Lumen film (MP4)</a>
+        </video>
+        <button type="button" id="film-play" aria-label="Play the Lumen film, 2 minutes 55 seconds, sound on" style="position: absolute; left: 50%; top: 50%; width: 92px; height: 92px; margin: -46px 0 0 -46px; border: 0; border-radius: 50%; background: #5B3DF5; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(91,61,245,.22), 0 20px 50px rgba(0,0,0,.5)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg>
+        </button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: #12141C; border-top: 1px solid #23273A">
+        <button type="button" id="film-toggle" aria-label="Play" style="flex: none; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin: -13px; padding: 0; border: 0; border-radius: 10px; background: transparent; color: #E7E8EE">
+          <svg id="film-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg>
+          <svg id="film-icon-pause" hidden width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"></path></svg>
+        </button>
+        <span id="film-time" style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #D3D6E0; white-space: nowrap">0:00 / 2:55</span>
+        <input id="film-seek" class="seek" type="range" min="0" max="175" step="0.1" value="0" aria-label="Seek in the film">
+      </div>
     </div>
   </div>
 </section>
@@ -409,26 +474,188 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
   </div>
 </section>
 
-<!-- CLOSING -->
+<!-- DOWNLOAD -->
 <section id="download" style="position: relative; padding: 140px 24px 120px; overflow: hidden; border-top: 1px solid #1C1F2A">
+  <div class="grid-bg" aria-hidden="true" style="position: absolute; inset: 0"></div>
   <div class="breathe" aria-hidden="true" style="position: absolute; left: 50%; top: 40px; width: 900px; height: 520px; margin-left: -450px; border-radius: 50%; background: radial-gradient(closest-side, rgba(91,61,245,.32), rgba(91,61,245,0))"></div>
-  <div class="reveal" style="position: relative; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
-    <img src="icon.png" alt="" style="width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 20px 60px rgba(91,61,245,.5)">
-    <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1; letter-spacing: -0.035em; color: #FFFFFF">Get Lumen for Mac, Windows and Linux.</h2>
-    <p style="margin: 0; max-width: 560px; font-size: 18px; color: #B4B9C9">Gmail, Outlook, iCloud, Yahoo and any IMAP host, in one calm inbox. A light Rust core keeps it fast and easy on memory.</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
-      <a href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_universal.dmg" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #5B3DF5; color: #FFFFFF; font-weight: 600; text-decoration: none; box-shadow: 0 10px 30px rgba(91,61,245,.45)">Download for Mac</a>
-      <a href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_x64.msi" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #5B3DF5; color: #FFFFFF; font-weight: 600; text-decoration: none; box-shadow: 0 10px 30px rgba(91,61,245,.45)">Download for Windows</a>
-      <a href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_amd64.AppImage" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 12px; background: #5B3DF5; color: #FFFFFF; font-weight: 600; text-decoration: none; box-shadow: 0 10px 30px rgba(91,61,245,.45)">Download for Linux</a>
+  <div style="position: relative; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+    <div class="reveal" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+      <img src="icon.png" alt="" style="width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 20px 60px rgba(91,61,245,.5)">
+      <h2 style="margin: 0; max-width: 860px; font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: clamp(40px, 5.6vw, 76px); line-height: 1; letter-spacing: -0.035em; color: #FFFFFF">Get Lumen for Mac, Windows and Linux.</h2>
+      <p style="margin: 0; max-width: 560px; font-size: 18px; color: #B4B9C9">Gmail, Outlook, iCloud, Yahoo and any IMAP host, in one calm inbox. A light Rust core keeps it fast and easy on memory.</p>
     </div>
-    <p style="margin: 0; font-size: 14px; color: #8A90A4">Linux also as <a href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_amd64.deb" style="color: #B4B9C9">.deb</a> or <a href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_x86_64.rpm" style="color: #B4B9C9">.rpm</a> · <a href="https://github.com/hitenpratap/lumen-site/releases" style="color: #B4B9C9">All releases</a></p>
-    <p style="margin: 0; font-size: 14px; color: #8A90A4">macOS 10.15+ · Windows 10+ · Linux with WebKitGTK 4.1 (Ubuntu 22.04+, Fedora 36+)</p>
-    <div style="max-width: 600px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #8A90A4">
-      <p style="margin: 0">First launch: Lumen isn't notarised by Apple or signed for Windows yet.</p>
-      <p style="margin: 0"><strong style="color: #B4B9C9; font-weight: 600">Mac:</strong> macOS says it can't check Lumen for malware. Click Done, then go to System Settings › Privacy &amp; Security and click <strong style="color: #B4B9C9; font-weight: 600">Open Anyway</strong>.</p>
-      <p style="margin: 0"><strong style="color: #B4B9C9; font-weight: 600">Windows:</strong> when it says "Windows protected your PC", click More info, then <strong style="color: #B4B9C9; font-weight: 600">Run anyway</strong>.</p>
-      <p style="margin: 0"><strong style="color: #B4B9C9; font-weight: 600">Linux:</strong> make the AppImage executable first with <code style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #B4B9C9">chmod +x Lumen_amd64.AppImage</code>, or tick "Allow executing file as program" in its Properties. The .deb and .rpm need no extra step.</p>
+
+    <!-- platform picker -->
+    <div role="tablist" aria-label="Choose your system" class="reveal" style="width: 100%; max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px">
+      <button type="button" role="tab" id="tab-mac" class="os-tab" data-os="mac" aria-controls="dl-mac" aria-selected="true">
+        <span class="os-tile">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.3">
+          <b style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 20px; font-weight: 700">Mac</b>
+          <span style="font-size: 13px; color: #9AA0B4">macOS 10.15+</span>
+        </span>
+        <svg class="os-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A996FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+      </button>
+      <button type="button" role="tab" id="tab-windows" class="os-tab" data-os="windows" aria-controls="dl-windows" aria-selected="false" tabindex="-1">
+        <span class="os-tile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h11.377v11.372H0zM12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zM12.623 12.623H24V24H12.623z"></path></svg>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.3">
+          <b style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 20px; font-weight: 700">Windows</b>
+          <span style="font-size: 13px; color: #9AA0B4">Windows 10+</span>
+        </span>
+        <svg class="os-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A996FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+      </button>
+      <button type="button" role="tab" id="tab-linux" class="os-tab" data-os="linux" aria-controls="dl-linux" aria-selected="false" tabindex="-1">
+        <span class="os-tile">
+          <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><defs><mask id="tux-tab"><rect width="24" height="24" fill="#FFFFFF"></rect><ellipse cx="12" cy="15.6" rx="3.9" ry="5.2" fill="#000000"></ellipse><circle cx="10.4" cy="6.4" r="1.15" fill="#000000"></circle><circle cx="13.6" cy="6.4" r="1.15" fill="#000000"></circle></mask></defs><g mask="url(#tux-tab)" fill="currentColor"><circle cx="12" cy="6.8" r="4.6"></circle><ellipse cx="12" cy="14.6" rx="6.6" ry="7.4"></ellipse></g><circle cx="10.6" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="13.4" cy="6.5" r=".5" fill="currentColor"></circle><path d="M10.2 8.4Q12 7.6 13.8 8.4L12 10.3z" fill="#F5B54A"></path><ellipse cx="8.3" cy="21.7" rx="2.7" ry="1.25" fill="#F5B54A"></ellipse><ellipse cx="15.7" cy="21.7" rx="2.7" ry="1.25" fill="#F5B54A"></ellipse></svg>
+        </span>
+        <span style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.3">
+          <b style="font-family: 'Bricolage Grotesque', Inter, sans-serif; font-size: 20px; font-weight: 700">Linux</b>
+          <span style="font-size: 13px; color: #9AA0B4">AppImage, .deb, .rpm</span>
+        </span>
+        <svg class="os-check" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A996FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+      </button>
     </div>
+
+    <!-- Mac -->
+    <div role="tabpanel" id="dl-mac" class="dl-panel reveal" data-os-panel="mac" aria-labelledby="tab-mac">
+      <div class="dl-side">
+        <div style="display: flex; align-items: center; gap: 18px">
+          <span class="dl-logo"><svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span class="mono-k" style="color: #A996FF">Lumen for</span><b class="dl-name">Mac</b></span>
+        </div>
+        <ul class="dl-facts">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>macOS 10.15 or later</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>Apple silicon and Intel</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>Universal .dmg</span></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a class="dl-btn" href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_universal.dmg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download for Mac</span></a>
+          <span class="dl-file">Lumen_universal.dmg</span>
+        </div>
+        <a class="dl-all" href="https://github.com/hitenpratap/lumen-site/releases"><span>All releases on GitHub</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="dl-start">
+        <div style="display: flex; flex-direction: column; gap: 6px"><span class="mono-k" style="color: #6FD69A">Getting started</span><b class="dl-headline">macOS asks once. Here’s what to click.</b></div>
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar">
+            <span class="dot" style="background: #FF5F57"></span><span class="dot" style="background: #FEBC2E"></span><span class="dot" style="background: #28C840"></span>
+            <span style="margin-left: 10px; font-size: 13px; font-weight: 600; color: #D3D6E0">Privacy &amp; Security</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 18px">
+            <span style="display: flex; align-items: center; gap: 12px; min-width: 0">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5B54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span style="font-size: 14px; color: #D3D6E0">“Lumen” was blocked to protect your Mac.</span>
+            </span>
+            <span style="display: inline-flex; align-items: center; gap: 8px">
+              <span class="num" style="background: #2B2550; color: #C7BBFF">3</span>
+              <span class="ring" style="display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 8px; background: #5B3DF5; color: #FFFFFF; font-size: 13px; font-weight: 600">Open Anyway</span>
+            </span>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span class="n">1</span><span class="s"><b>Drag Lumen into Applications</b><span>Open the .dmg you downloaded.</span></span></li>
+          <li><span class="n">2</span><span class="s"><b>Open Lumen, then click Done</b><span>macOS says it can’t check Lumen for malware.</span></span></li>
+          <li><span class="n key">3</span><span class="s"><b>Click Open Anyway</b><span>In System Settings › Privacy &amp; Security. You only do this once.</span></span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Windows -->
+    <div role="tabpanel" id="dl-windows" class="dl-panel" data-os-panel="windows" aria-labelledby="tab-windows" hidden>
+      <div class="dl-side">
+        <div style="display: flex; align-items: center; gap: 18px">
+          <span class="dl-logo"><svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 0h11.377v11.372H0zM12.623 0H24v11.372H12.623zM0 12.623h11.377V24H0zM12.623 12.623H24V24H12.623z"></path></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span class="mono-k" style="color: #A996FF">Lumen for</span><b class="dl-name">Windows</b></span>
+        </div>
+        <ul class="dl-facts">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>Windows 10 or later</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>64-bit</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>.msi installer</span></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a class="dl-btn" href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_x64.msi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download for Windows</span></a>
+          <span class="dl-file">Lumen_x64.msi</span>
+        </div>
+        <a class="dl-all" href="https://github.com/hitenpratap/lumen-site/releases"><span>All releases on GitHub</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="dl-start">
+        <div style="display: flex; flex-direction: column; gap: 6px"><span class="mono-k" style="color: #6FD69A">Getting started</span><b class="dl-headline">Windows warns once. Here’s what to click.</b></div>
+        <div class="mock" aria-hidden="true" style="border-color: #1E4A7A; background: #0F2A47">
+          <div style="padding: 20px 20px 8px; display: flex; flex-direction: column; gap: 10px">
+            <b style="font-size: 20px; font-weight: 600; color: #FFFFFF">Windows protected your PC</b>
+            <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #D8E6F5">
+              <span class="num" style="background: #1E3D63; color: #BFD8F2">2</span>
+              <span class="ring" style="padding: 2px 6px; border-radius: 6px; text-decoration: underline">More info</span>
+            </span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 8px; padding: 14px 20px 18px">
+            <span class="num" style="background: #1E3D63; color: #BFD8F2">3</span>
+            <span class="ring" style="display: inline-flex; align-items: center; min-height: 32px; padding: 0 16px; border-radius: 6px; background: #FFFFFF; color: #0F2A47; font-size: 13px; font-weight: 600">Run anyway</span>
+            <span style="display: inline-flex; align-items: center; min-height: 32px; padding: 0 16px; border-radius: 6px; border: 1px solid #5B7FA6; color: #D8E6F5; font-size: 13px; font-weight: 600">Don't run</span>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span class="n">1</span><span class="s"><b>Run Lumen_x64.msi</b><span>Double-click the installer you downloaded.</span></span></li>
+          <li><span class="n key">2</span><span class="s"><b>Click More info</b><span>When it says “Windows protected your PC”.</span></span></li>
+          <li><span class="n key">3</span><span class="s"><b>Click Run anyway</b><span>Then follow the installer. You only do this once.</span></span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Linux -->
+    <div role="tabpanel" id="dl-linux" class="dl-panel" data-os-panel="linux" aria-labelledby="tab-linux" hidden>
+      <div class="dl-side">
+        <div style="display: flex; align-items: center; gap: 18px">
+          <span class="dl-logo"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><defs><mask id="tux-panel"><rect width="24" height="24" fill="#FFFFFF"></rect><ellipse cx="12" cy="15.6" rx="3.9" ry="5.2" fill="#000000"></ellipse><circle cx="10.4" cy="6.4" r="1.15" fill="#000000"></circle><circle cx="13.6" cy="6.4" r="1.15" fill="#000000"></circle></mask></defs><g mask="url(#tux-panel)" fill="currentColor"><circle cx="12" cy="6.8" r="4.6"></circle><ellipse cx="12" cy="14.6" rx="6.6" ry="7.4"></ellipse></g><circle cx="10.6" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="13.4" cy="6.5" r=".5" fill="currentColor"></circle><path d="M10.2 8.4Q12 7.6 13.8 8.4L12 10.3z" fill="#F5B54A"></path><ellipse cx="8.3" cy="21.7" rx="2.7" ry="1.25" fill="#F5B54A"></ellipse><ellipse cx="15.7" cy="21.7" rx="2.7" ry="1.25" fill="#F5B54A"></ellipse></svg></span>
+          <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span class="mono-k" style="color: #A996FF">Lumen for</span><b class="dl-name">Linux</b></span>
+        </div>
+        <ul class="dl-facts">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>Ubuntu 22.04+ or Fedora 36+</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>WebKitGTK 4.1</span></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6FD69A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg><span>64-bit</span></li>
+        </ul>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span class="mono-k" style="font-size: 12px; color: #9AA0B4">Package</span>
+          <div role="radiogroup" aria-label="Linux package" style="display: flex; flex-wrap: wrap; gap: 6px; padding: 6px; border-radius: 14px; background: #0A0B10; border: 1px solid #23273A; align-self: flex-start">
+            <button type="button" role="radio" class="fmt" data-fmt="appimage" aria-checked="true">AppImage</button>
+            <button type="button" role="radio" class="fmt" data-fmt="deb" aria-checked="false">.deb</button>
+            <button type="button" role="radio" class="fmt" data-fmt="rpm" aria-checked="false">.rpm</button>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <a class="dl-btn" id="linux-dl" href="https://github.com/hitenpratap/lumen-site/releases/latest/download/Lumen_amd64.AppImage"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download for Linux</span></a>
+          <span class="dl-file" id="linux-file">Lumen_amd64.AppImage</span>
+        </div>
+        <a class="dl-all" href="https://github.com/hitenpratap/lumen-site/releases"><span>All releases on GitHub</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="dl-start">
+        <div style="display: flex; flex-direction: column; gap: 6px"><span class="mono-k" style="color: #6FD69A">Getting started</span><b class="dl-headline">One command, then you’re in.</b></div>
+        <div class="mock" style="background: #07080C">
+          <div class="mock-bar" style="background: #12141C; border-bottom-color: #23273A">
+            <span class="dot" style="background: #3A3F52"></span><span class="dot" style="background: #3A3F52"></span><span class="dot" style="background: #3A3F52"></span>
+            <span style="margin-left: 10px; font-size: 13px; font-weight: 600; color: #9AA0B4">Terminal</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 16px 16px 16px 18px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px">
+            <span aria-hidden="true" style="color: #6FD69A">$</span>
+            <code id="linux-cmd" style="flex: 1; min-width: 0; color: #E7E8EE; overflow-wrap: anywhere">chmod +x Lumen_amd64.AppImage</code>
+            <button type="button" id="linux-copy" aria-label="Copy the command" style="flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 8px; border: 1px solid #2E3342; background: #181B25; color: #E7E8EE; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg>
+              <span id="linux-copy-label">Copy</span>
+            </button>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><span class="n key">1</span><span class="s"><b id="linux-s1">Make it executable</b><span id="linux-s1t">Run the command above, or tick "Allow executing file as program" in the file’s Properties.</span></span></li>
+          <li><span class="n">2</span><span class="s"><b>Open Lumen</b><span id="linux-s2t">Double-click the AppImage.</span></span></li>
+          <li><span class="n">3</span><span class="s"><b>Add your account</b><span>Gmail, Outlook, iCloud, Yahoo or any IMAP host.</span></span></li>
+        </ol>
+      </div>
+    </div>
+
+    <p style="margin: 0; text-align: center; font-size: 14px; color: #8A90A4">Lumen isn't notarised by Apple or signed for Windows yet, so the first launch on those needs one extra click.</p>
   </div>
 </section>
 
@@ -481,6 +708,86 @@ button:focus-visible,a:focus-visible{outline:2px solid #A996FF;outline-offset:3p
     document.querySelectorAll('[data-card]').forEach((e) => { e.style.opacity = (e.dataset.card === 'local') === local ? 1 : 0.35; });
     document.getElementById('route-caption').textContent = captions[b.dataset.route];
   }));
+
+  // Film: the big button starts it; the bar plays, pauses and seeks.
+  const video = document.getElementById('film-video');
+  const big = document.getElementById('film-play');
+  const toggle = document.getElementById('film-toggle');
+  const seek = document.getElementById('film-seek');
+  const time = document.getElementById('film-time');
+  const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  const length = () => (Number.isFinite(video.duration) && video.duration) || 175;
+  const sync = () => {
+    const d = length();
+    time.textContent = `${clock(video.currentTime)} / ${clock(d)}`;
+    seek.max = d;
+    seek.value = video.currentTime;
+    seek.style.setProperty('--p', `${Math.max(1, (video.currentTime / d) * 100)}%`);
+  };
+  const playing = (on) => {
+    big.hidden = on;
+    document.getElementById('film-icon-play').hidden = on;
+    document.getElementById('film-icon-pause').hidden = !on;
+    toggle.setAttribute('aria-label', on ? 'Pause' : 'Play');
+  };
+  const flip = () => (video.paused ? video.play() : video.pause());
+  big.addEventListener('click', () => video.play());
+  toggle.addEventListener('click', flip);
+  video.addEventListener('click', flip);
+  video.addEventListener('play', () => playing(true));
+  video.addEventListener('pause', () => playing(false));
+  video.addEventListener('timeupdate', sync);
+  video.addEventListener('loadedmetadata', sync);
+  seek.addEventListener('input', () => { video.currentTime = Number(seek.value); sync(); });
+
+  // Download picker: starts on the visitor's own system.
+  const osTabs = [...document.querySelectorAll('[data-os]')];
+  const pickOs = (id, focus) => {
+    osTabs.forEach((t) => {
+      const on = t.dataset.os === id;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+    });
+    document.querySelectorAll('[data-os-panel]').forEach((p) => { p.hidden = p.dataset.osPanel !== id; });
+  };
+  osTabs.forEach((t, i) => {
+    t.addEventListener('click', () => pickOs(t.dataset.os));
+    t.addEventListener('keydown', (e) => {
+      const step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      pickOs(osTabs[(i + step + osTabs.length) % osTabs.length].dataset.os, true);
+    });
+  });
+  const platform = `${navigator.userAgentData?.platform ?? ''} ${navigator.platform ?? ''} ${navigator.userAgent}`;
+  pickOs(/mac/i.test(platform) ? 'mac' : /win/i.test(platform) ? 'windows' : /linux|x11/i.test(platform) && !/android/i.test(platform) ? 'linux' : 'mac');
+
+  // Linux package switch and the copy button.
+  const pkgs = {
+    appimage: { file: 'Lumen_amd64.AppImage', cmd: 'chmod +x Lumen_amd64.AppImage', s1: 'Make it executable', s1t: 'Run the command above, or tick "Allow executing file as program" in the file’s Properties.', s2t: 'Double-click the AppImage.' },
+    deb: { file: 'Lumen_amd64.deb', cmd: 'sudo apt install ./Lumen_amd64.deb', s1: 'Install the package', s1t: 'Run the command above, or open the file with your software installer.', s2t: 'Find it in your apps menu.' },
+    rpm: { file: 'Lumen_x86_64.rpm', cmd: 'sudo dnf install ./Lumen_x86_64.rpm', s1: 'Install the package', s1t: 'Run the command above, or open the file with your software installer.', s2t: 'Find it in your apps menu.' }
+  };
+  const copyLabel = document.getElementById('linux-copy-label');
+  const fmts = document.querySelectorAll('[data-fmt]');
+  fmts.forEach((b) => b.addEventListener('click', () => {
+    const p = pkgs[b.dataset.fmt];
+    fmts.forEach((f) => f.setAttribute('aria-checked', f === b));
+    document.getElementById('linux-dl').href = `https://github.com/hitenpratap/lumen-site/releases/latest/download/${p.file}`;
+    document.getElementById('linux-file').textContent = p.file;
+    document.getElementById('linux-cmd').textContent = p.cmd;
+    document.getElementById('linux-s1').textContent = p.s1;
+    document.getElementById('linux-s1t').textContent = p.s1t;
+    document.getElementById('linux-s2t').textContent = p.s2t;
+    copyLabel.textContent = 'Copy';
+  }));
+  document.getElementById('linux-copy').addEventListener('click', () => {
+    navigator.clipboard?.writeText(document.getElementById('linux-cmd').textContent).then(() => {
+      copyLabel.textContent = 'Copied';
+      setTimeout(() => { copyLabel.textContent = 'Copy'; }, 2000);
+    }, () => {});
+  });
 })();
 </script>
 </body>
